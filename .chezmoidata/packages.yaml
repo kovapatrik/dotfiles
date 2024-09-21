@@ -3,26 +3,33 @@ packages:
     taps:
       - armcord/armcord
     brews:
+      - docker
+      - docker-compose
+      - fzf
       - git
       - go
+      - jq
       - lima
     casks:
-      - zed
-      - arc
-      - github
-      - mac-mouse-fix
-      - lunar
       - amie
-      - telegram
-      - elgato-wave-link
-      - raycast
-      - messenger
-      - wezterm
+      - arc
       - armcord
+      - elgato-wave-link
+      - font-geist-mono-nerd-font
+      - font-meslo-lg-nerd-font
+      - font-monaspace-nerd-font
+      - github
+      - lunar
+      - mac-mouse-fix
+      - messenger
+      - telegram
+      - raycast
+      - wezterm
+      - zed
     apps:
-      - name: Xcode
-        id: 497799835
-      - name: Slack
-        id: 803453959
       - name: Bitwarden
         id: 1352778147
+      - name: Slack
+        id: 803453959
+      - name: Xcode
+        id: 497799835

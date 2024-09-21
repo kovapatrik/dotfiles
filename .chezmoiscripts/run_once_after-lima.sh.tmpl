@@ -1,0 +1,17 @@
+#!/bin/bash
+set -ex
+
+echo ""
+echo "Creating lima default context"
+
+{{ if eq .chezmoi.os "darwin" -}}
+VM_TYPE="vz"
+{{ else if eq .chezmoi.os "linux" }}
+VM_TYPE="qemu"
+{{ end -}}
+{{ if eq .chezmoi.os "darwin" "linux" -}}
+limactl create --name=default template://docker --vm-type=$VM_TYPE --tty=false
+limactl start-at-login default
+limactl start
+{{ end -}}
+echo "Done"

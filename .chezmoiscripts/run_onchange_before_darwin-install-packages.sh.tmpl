@@ -1,5 +1,9 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
+set -ex
+
+echo ""
+echo "Resolving packages.yaml"
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 {{ range .packages.darwin.taps -}}
@@ -16,3 +20,4 @@ mas {{ .name | quote }}, id: {{ .id }}
 {{ end -}}
 EOF
 {{ end -}}
+echo "Done"

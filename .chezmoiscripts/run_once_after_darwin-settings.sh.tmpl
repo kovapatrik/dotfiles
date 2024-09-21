@@ -1,6 +1,8 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
+echo ""
+echo "MacOS configs"
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -77,9 +79,9 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Fill
 # Bind center window to Control+Option+c
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Center" "^~c"
 # Bind arranging window left side to Control+Option+Left Arrow
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Arrange\033Left" "~^\\U2190"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Left" "~^\\U2190"
 # Bind arranging window right side to Control+Option+Right Arrow
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Arrange\033Right" "~^\\U2192"
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Right" "~^\\U2192"
 
 # Disable Spotlight shortcut (64 is Spotlight, dont't know about the other numbers)
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{ enabled = 0; value = { parameters = (32, 49, 1048576); type = 'standard'; }; }"
