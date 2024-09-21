@@ -1,0 +1,23 @@
+packages:
+  darwin:
+    brews:
+      - git
+      - go
+      - lima
+      - rustup
+    casks:
+      - zed
+      - arc
+      - github
+      - mac-mouse-fix
+      - lunar
+      - amie
+      - telegram
+      - elgato-wave-link
+      - raycast
+      - messenger
+    apps:
+      - name: Slack
+        id: 803453959
+      - name: Bitwarden
+        id: 1352778147
