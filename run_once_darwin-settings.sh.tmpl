@@ -1,0 +1,119 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+###############################################################################
+# General UX/UI                                                               #
+###############################################################################
+
+# Show extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# Disable Spotlight from menu bar
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
+# Disable recents from Dock
+defaults write com.apple.dock show-recents -bool false
+# Show hidden files in Finder
+defaults write com.apple.finder AppleShowAllFiles -bool true
+# Show path bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+# Show status bar in Finder
+defaults write com.apple.finder ShowStatusBar -bool true
+# Set default view style in Finder
+# column: clmv
+# list: Nlsv
+# gallery: glyv
+# icon: icnv
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+# Set default search scope in Finder
+# current folder: SCcf
+# previous search scope: SCsp
+# Mac: SCev
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+# Set the default directory on a newly opened Finder window
+# HOME: PfHm
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+# Hide tags from Finder
+defaults write com.apple.finder ShowRecentTags -bool false
+
+
+###############################################################################
+# Keyboard/Typing                                                             #
+###############################################################################
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# Disable spell checking in web?
+defaults write NSGlobalDomain WebAutomaticSpellingCorrectionEnabled -bool false
+# Disable predictive text
+defaults write NSGlobalDomain NSAutomaticInlinePredictionEnabled -bool false
+# Disable press and hold feature
+# enabled: show character accents menu
+# disabled: repeat character while key held
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+###############################################################################
+# Keyboard/Shortcuts                                                          #
+###############################################################################
+
+# Bind fill window to Control+Option+Enter
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Fill" "^~\\U21a9"
+# Bind center window to Control+Option+c
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Center" "^~c"
+# Bind arranging window left side to Control+Option+Left Arrow
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Arrange\033Left" "~^\\U2190"
+# Bind arranging window right side to Control+Option+Right Arrow
+defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Arrange\033Right" "~^\\U2192"
+
+# Disable Spotlight shortcut (64 is Spotlight, dont't know about the other numbers)
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{ enabled = 0; value = { parameters = (32, 49, 1048576); type = 'standard'; }; }"
+
+###############################################################################
+# Safari                                                                      #
+###############################################################################
+# # Enable Safari’s debug menu
+# defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+# # Enable the Develop menu and the Web Inspector in Safari
+# defaults write com.apple.Safari IncludeDevelopMenu -bool true
+# defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+# Add a context menu item for showing the Web Inspector in web views
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+###############################################################################
+# Misc                                                                        #
+###############################################################################
+# Disable AutoFill
+# defaults write com.apple.Safari AutoFillFromAddressBook -bool false
+# defaults write com.apple.Safari AutoFillPasswords -bool false
+# defaults write com.apple.Safari AutoFillCreditCardData -bool false
+# defaults write com.apple.Safari AutoFillMiscellaneousForms -bool false
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+for app in "Dock" \
+	"Finder" \
+	"Safari" \
+	"SystemUIServer" \
+	"Terminal"; do
+	killall "${app}" &> /dev/null
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+
+{{ end -}}

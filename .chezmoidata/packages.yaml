@@ -1,10 +1,11 @@
 packages:
   darwin:
+    taps:
+      - armcord/armcord
     brews:
       - git
       - go
       - lima
-      - rustup
     casks:
       - zed
       - arc
@@ -16,7 +17,11 @@ packages:
       - elgato-wave-link
       - raycast
       - messenger
+      - wezterm
+      - armcord
     apps:
+      - name: Xcode
+        id: 497799835
       - name: Slack
         id: 803453959
       - name: Bitwarden
