@@ -3,13 +3,17 @@ packages:
     taps:
       - armcord/armcord
     brews:
+      - bat
       - docker
       - docker-compose
+      - eza
       - fzf
       - git
       - go
       - jq
+      - lazygit
       - lima
+      - zoxide
     casks:
       - amie
       - arc
