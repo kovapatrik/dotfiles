@@ -6,6 +6,7 @@
 osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
+echo "Enter your password for chezmoi run_once_darwin-settings.sh"
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
