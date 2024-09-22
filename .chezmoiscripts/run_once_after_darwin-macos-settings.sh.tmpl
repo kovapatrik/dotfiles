@@ -83,8 +83,8 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move
 # Bind arranging window right side to Control+Option+Right Arrow
 defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Right" "~^\\U2192"
 
-# Disable Spotlight shortcut (64 is Spotlight, dont't know about the other numbers)
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{ enabled = 0; value = { parameters = (32, 49, 1048576); type = 'standard'; }; }"
+# Disable Spotlight shortcut (64 is Spotlight)
+/usr/libexec/PlistBuddy -c "Set AppleSymbolicHotKeys:64:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 ###############################################################################
 # Safari                                                                      #
