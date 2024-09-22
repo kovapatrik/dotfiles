@@ -5,9 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source "$HOME/.cargo/env"
-
-ZPLUGINDIR="$ZDOTDIR/plugins"
 # zsh-unplugged
 function plugin-load {
   local repo plugdir initfile initfiles=()
@@ -30,16 +27,71 @@ function plugin-load {
   done
 }
 
+function completion-load {
+    local completion name command completionfile
+    for completion in $@; do
+        name=${completion%% *}
+        command=${completion#* }
+        completionfile=$COMPLETIONSDIR/_$name
+        if [[ ! -f $completionfile ]]; then
+            echo "Creating completion file for $name..."
+            # Capture the command output and status
+            if output=$(eval "$command" 2>&1); then
+                echo "$output" > "$completionfile"
+            else
+                echo "Failed to create completion for $name. Error: $output"
+            fi
+        fi
+    done
+}
+
+# Volta
+export VOLTA_FEATURE_PNPM=1
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Cargo
+source "$HOME/.cargo/env"
+
+ZPLUGINDIR="$ZDOTDIR/plugins"
 plugins=(
+    # Core
     romkatv/powerlevel10k
-    zsh-users/zsh-syntax-highlighting
     zsh-users/zsh-completions
     zsh-users/zsh-autosuggestions
     Aloxaf/fzf-tab
+
+    # Plugins
+    MohamedElashri/eza-zsh
+    Freed-Wu/zsh-help
+    reegnz/jq-zsh-plugin
+
+    # Completions
+    eastokes/aws-plugin-zsh
+    MenkeTechnologies/zsh-cargo-completion
+    conda-incubator/conda-zsh-completion
+
+    # Must be after everything else
+    zsh-users/zsh-syntax-highlighting
 )
 plugin-load $plugins
 
+# Setup extra completions
+COMPLETIONSDIR=$ZDOTDIR/completions
+[[ -d $COMPLETIONSDIR ]] || mkdir $COMPLETIONSDIR
+fpath=($COMPLETIONSDIR \\$fpath)
+
+# Format: "name command"
+completions=(
+    "docker docker completion zsh"
+    "chezmoi chezmoi completion zsh"
+    "volta volta completions zsh"
+    "pnpm pnpm completion zsh"
+)
+completion-load $completions
+
 # Load completions
+# setopt interactive_comments # needed for zsh-autocomplete
 autoload -U compinit && compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
@@ -48,6 +100,8 @@ autoload -U compinit && compinit
 # Keybindings
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+bindkey '^j' jq-complete
+
 
 # History
 HISTSIZE=5000
