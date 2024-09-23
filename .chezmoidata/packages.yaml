@@ -18,6 +18,7 @@ packages:
       - amie
       - arc
       - armcord
+      - devtoys
       - elgato-wave-link
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font
