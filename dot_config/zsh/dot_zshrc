@@ -136,3 +136,4 @@ alias lg="lazygit"
 # Shell integrations
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
+eval "$(conda shell.zsh hook)"

@@ -26,6 +26,7 @@ packages:
       - lunar
       - mac-mouse-fix
       - messenger
+      - miniconda
       - telegram
       - raycast
       - slack
