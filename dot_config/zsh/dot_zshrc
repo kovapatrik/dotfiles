@@ -45,6 +45,8 @@ function completion-load {
     done
 }
 
+export EDITOR="zed --wait"
+
 # Volta
 export VOLTA_FEATURE_PNPM=1
 export VOLTA_HOME="$HOME/.volta"
