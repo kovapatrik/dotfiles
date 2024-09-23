@@ -127,6 +127,22 @@
           }
         }
       }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": true
+          },
+          "bindingModeHints": {
+            "enable": true
+          },
+          "closureReturnTypeHints": {
+            "enable": true
+          }
+        }
+      }
     }
   }
 }
