@@ -21,6 +21,9 @@
     "version": "2",
     "provider": null
   },
+  "features": {
+    "inline_completion_provider": "supermaven"
+  },
   "collaboration_panel": {
     "button": false
   },
