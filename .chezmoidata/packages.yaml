@@ -28,12 +28,11 @@ packages:
       - messenger
       - telegram
       - raycast
+      - slack
       - wezterm
       - zed
     apps:
       - name: Bitwarden
         id: 1352778147
-      - name: Slack
-        id: 803453959
       - name: Xcode
         id: 497799835
