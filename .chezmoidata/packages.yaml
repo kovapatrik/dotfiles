@@ -12,8 +12,8 @@ packages:
       - go
       - jq
       - lazygit
+      - libpq
       - lima
-      - postgresql@16
       - zoxide
     casks:
       - amie
