@@ -45,16 +45,6 @@ function completion-load {
     done
 }
 
-export EDITOR="zed --wait"
-
-# Volta
-export VOLTA_FEATURE_PNPM=1
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
-# Cargo
-source "$HOME/.cargo/env"
-
 ZPLUGINDIR="$ZDOTDIR/plugins"
 plugins=(
     # Core
@@ -74,7 +64,8 @@ plugins=(
     conda-incubator/conda-zsh-completion
 
     # Must be after everything else
-    zsh-users/zsh-syntax-highlighting
+    zdharma-continuum/fast-syntax-highlighting
+    zsh-users/zsh-history-substring-search
 )
 plugin-load $plugins
 
@@ -96,27 +87,19 @@ completion-load $completions
 # setopt interactive_comments # needed for zsh-autocomplete
 autoload -U compinit && compinit
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
+[[ ! -f $ZDOTDIR/.p10k.zsh ]] || source $ZDOTDIR/.p10k.zsh
 
 # Keybindings
-bindkey '^[[A' history-search-backward
-bindkey '^[[B' history-search-forward
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 bindkey '^j' jq-complete
-
 
 # History
 HISTSIZE=5000
 HISTFILE=$ZDOTDIR/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space # ignoring commands starting with space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
 
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # casing doesn't matter
@@ -127,11 +110,10 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
 
 # Aliases
-alias ls="eza"
-alias ll="eza -lh"
-alias l="eza -lah"
-alias cat="bat"
-alias lg="lazygit"
+[ -f $ZDOTDIR/.aliasrc ] && source $ZDOTDIR/.aliasrc
+
+# Options
+[ -f $ZDOTDIR/.optionrc ] && source $ZDOTDIR/.optionrc
 
 # Shell integrations
 source <(fzf --zsh)

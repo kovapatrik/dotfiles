@@ -1,0 +1,15 @@
+if [[ -z "$XDG_CONFIG_HOME" ]]; then
+  export XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+export PATH="$PATH:$HOME/.local/bin"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export EDITOR="zed --wait"
+
+# Volta
+export VOLTA_FEATURE_PNPM=1
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Cargo
+source "$HOME/.cargo/env"
