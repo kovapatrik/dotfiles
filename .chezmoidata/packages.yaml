@@ -13,6 +13,7 @@ packages:
       - jq
       - lazygit
       - lima
+      - postgresql@16
       - zoxide
     casks:
       - amie
