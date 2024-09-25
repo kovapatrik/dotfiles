@@ -19,6 +19,7 @@ packages:
       - amie
       - arc
       - armcord
+      - beekeeper-studio
       - devtoys
       - elgato-wave-link
       - font-geist-mono-nerd-font
