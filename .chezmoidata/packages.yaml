@@ -26,6 +26,7 @@ packages:
       - font-meslo-lg-nerd-font
       - font-monaspace-nerd-font
       - github
+      - languagetool
       - lunar
       - mac-mouse-fix
       - messenger
