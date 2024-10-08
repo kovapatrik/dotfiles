@@ -80,6 +80,7 @@ completions=(
     "chezmoi chezmoi completion zsh"
     "volta volta completions zsh"
     "pnpm pnpm completion zsh"
+    "yq yq completion zsh"
 )
 completion-load $completions
 
