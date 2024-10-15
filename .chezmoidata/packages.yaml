@@ -1,7 +1,6 @@
 packages:
   darwin:
     taps:
-      - armcord/armcord
     brews:
       - bat
       - docker
@@ -19,7 +18,6 @@ packages:
     casks:
       - amie
       - arc
-      - armcord
       - beekeeper-studio
       - devtoys
       - elgato-wave-link
@@ -28,6 +26,7 @@ packages:
       - font-monaspace-nerd-font
       - github
       - languagetool
+      - legcord
       - lunar
       - mac-mouse-fix
       - messenger
