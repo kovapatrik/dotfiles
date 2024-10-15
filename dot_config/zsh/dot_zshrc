@@ -97,7 +97,7 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^j' jq-complete
 
 # History
-HISTSIZE=5000
+HISTSIZE=10000
 HISTFILE=$ZDOTDIR/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
