@@ -4,6 +4,7 @@ packages:
     brews:
       - bat
       - docker
+      - docker-buildx
       - docker-compose
       - eza
       - fzf
