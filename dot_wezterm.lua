@@ -25,9 +25,9 @@ config.keys = {
         mods = 'OPT',
         action = act.SendKey { key = 'f', mods = 'ALT' },
     },
-    -- Bind Home and End
-    { mods = '', key = "Home", action = wezterm.action { SendString = "\001" } },
-    { mods = '', key = "End",  action = wezterm.action { SendString = "\005" } },
+    -- Bind CMD-Left, CMD-Right to move to the start/end of the line
+    { key = "LeftArrow",  mods = 'SUPER', action = wezterm.action { SendString = "\001" } },
+    { key = "RightArrow", mods = 'SUPER', action = wezterm.action { SendString = "\005" } },
 }
 
 return config
