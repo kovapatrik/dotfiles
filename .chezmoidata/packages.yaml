@@ -14,6 +14,7 @@ packages:
       - lazygit
       - libpq
       - lima
+      - oven-sh/bun/bun
       - yq
       - zoxide
     casks:
@@ -21,7 +22,6 @@ packages:
       - arc
       - beekeeper-studio
       - devtoys
-      - elgato-wave-link
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font
       - font-monaspace-nerd-font
