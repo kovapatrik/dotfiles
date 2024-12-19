@@ -40,5 +40,3 @@ packages:
     apps:
       - name: Bitwarden
         id: 1352778147
-      - name: Xcode
-        id: 497799835
