@@ -2,3 +2,7 @@
 
 # libpq
 export PATH="$PATH:$HOMEBREW_PREFIX/opt/libpq/bin"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
