@@ -86,15 +86,22 @@ defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move
 # Disable Spotlight shortcut (64 is Spotlight)
 /usr/libexec/PlistBuddy -c "Set AppleSymbolicHotKeys:64:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
+# Safari shortcuts
+## for some reason, shortcuts are not in the ~/Library/Containers/xy path
+
+# Toggle Sidebar
+defaults write ~/Library/Preferences/com.apple.Safari NSUserKeyEquivalents -dict-add "\033View\033Hide Sidebar" "@s"
+defaults write ~/Library/Preferences/com.apple.Safari NSUserKeyEquivalents -dict-add "\033View\033Show Sidebar" "@s"
+
 ###############################################################################
 # Safari                                                                      #
 ###############################################################################
 # # Enable Safari’s debug menu
-# defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 # # Enable the Develop menu and the Web Inspector in Safari
-# defaults write com.apple.Safari IncludeDevelopMenu -bool true
-# defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
