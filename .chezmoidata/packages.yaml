@@ -18,7 +18,6 @@ packages:
       - yq
       - zoxide
     casks:
-      - amie
       - arc
       - beekeeper-studio
       - devtoys
@@ -26,16 +25,15 @@ packages:
       - font-meslo-lg-nerd-font
       - font-monaspace-nerd-font
       - github
+      - ghostty
       - languagetool
       - legcord
       - lunar
       - mac-mouse-fix
-      - messenger
       - miniconda
       - telegram
       - raycast
       - slack
-      - wezterm
       - zed
     apps:
       - name: Bitwarden

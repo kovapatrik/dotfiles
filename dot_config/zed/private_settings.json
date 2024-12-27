@@ -14,8 +14,8 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
     },
     "default_open_ai_model": "gpt-4o",
     "version": "2",
