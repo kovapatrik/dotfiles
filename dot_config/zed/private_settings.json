@@ -14,8 +14,8 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
     "default_open_ai_model": "gpt-4o",
     "version": "2",
@@ -63,6 +63,7 @@
     "font_family": "MesloLGS Nerd Font",
     "button": false
   },
+  "language_servers": ["!biome", "..."],
   "languages": {
     "Python": {
       "language_servers": ["pyright", "ruff"],

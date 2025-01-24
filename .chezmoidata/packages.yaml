@@ -8,6 +8,7 @@ packages:
       - docker-compose
       - eza
       - fzf
+      - gh
       - git
       - go
       - jq
