@@ -16,7 +16,6 @@ packages:
       - libpq
       - lima
       - mise
-      - oven-sh/bun/bun
       - yq
       - zoxide
     casks:

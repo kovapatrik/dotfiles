@@ -78,7 +78,7 @@ fpath=($COMPLETIONSDIR \\$fpath)
 completions=(
     "docker docker completion zsh"
     "chezmoi chezmoi completion zsh"
-    "volta volta completions zsh"
+    "mise mise completion zsh"
     "pnpm pnpm completion zsh"
     "yq yq completion zsh"
 )
@@ -120,4 +120,4 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $real
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(conda shell.zsh hook)"
-eval "$(mise activate bash)"
+eval "$(mise activate zsh)"

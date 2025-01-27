@@ -48,7 +48,8 @@
   },
   "auto_install_extensions": {
     "catppuccin": true,
-    "git-firefly": true
+    "git-firefly": true,
+    "biome": true
   },
   "theme": "Catppuccin Macchiato",
   "ui_font_size": 16,
