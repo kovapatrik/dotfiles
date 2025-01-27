@@ -120,3 +120,4 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $real
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(conda shell.zsh hook)"
+eval "$(mise activate bash)"

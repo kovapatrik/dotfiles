@@ -15,6 +15,7 @@ packages:
       - lazygit
       - libpq
       - lima
+      - mise
       - oven-sh/bun/bun
       - yq
       - zoxide
