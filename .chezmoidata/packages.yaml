@@ -20,7 +20,6 @@ packages:
       - zoxide
     casks:
       - arc
-      - beekeeper-studio
       - devtoys
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font
