@@ -64,6 +64,12 @@
     "font_family": "MesloLGS Nerd Font",
     "button": false
   },
+  "language_servers": [
+    "!biome",
+    "!typescript-language-server",
+    "!eslint",
+    "..."
+  ],
   "languages": {
     "Python": {
       "language_servers": ["pyright", "ruff"],

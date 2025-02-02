@@ -35,6 +35,7 @@ packages:
       - raycast
       - slack
       - zed
+      - zen-browser
     apps:
       - name: Bitwarden
         id: 1352778147
