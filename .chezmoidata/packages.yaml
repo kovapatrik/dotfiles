@@ -29,8 +29,7 @@ packages:
       - languagetool
       - legcord
       - lunar
-      - mac-mouse-fix
-      - miniconda
+      - mos
       - telegram
       - raycast
       - slack
