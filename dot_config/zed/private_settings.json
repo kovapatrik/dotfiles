@@ -15,14 +15,14 @@
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "default_open_ai_model": "gpt-4o",
     "version": "2",
     "provider": null
   },
   "features": {
-    "inline_completion_provider": "copilot"
+    "edit_prediction_provider": "zed"
   },
   "collaboration_panel": {
     "button": false
