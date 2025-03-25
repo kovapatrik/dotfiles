@@ -61,7 +61,6 @@ plugins=(
     # Completions
     eastokes/aws-plugin-zsh
     MenkeTechnologies/zsh-cargo-completion
-    conda-incubator/conda-zsh-completion
 
     # Must be after everything else
     zdharma-continuum/fast-syntax-highlighting
@@ -119,5 +118,4 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $real
 # Shell integrations
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(conda shell.zsh hook)"
 eval "$(mise activate zsh)"

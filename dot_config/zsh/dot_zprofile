@@ -2,3 +2,6 @@
 
 # libpq
 export PATH="$PATH:$HOMEBREW_PREFIX/opt/libpq/bin"
+
+# lima - use container named docker
+export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')

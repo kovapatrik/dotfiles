@@ -10,10 +10,8 @@ VM_TYPE="vz"
 VM_TYPE="qemu"
 {{ end -}}
 {{ if eq .chezmoi.os "darwin" "linux" -}}
-limactl create --name=default template://docker --vm-type=$VM_TYPE --tty=false
-limactl start-at-login default
-limactl start
-docker context create lima-default --docker "host=unix://$HOME/.lima/default/sock/docker.sock"
-docker context use lima-default
+limactl create --name=docker template://docker --vm-type=$VM_TYPE --tty=false --mount-writable --mount-type=virtiofs
+limactl start-at-login docker
+limactl start docker
 {{ end -}}
 echo "Done"
