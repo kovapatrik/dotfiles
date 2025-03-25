@@ -5,12 +5,11 @@ echo ""
 echo "Creating lima default context"
 
 {{ if eq .chezmoi.os "darwin" -}}
-VM_TYPE="vz"
+limactl create --name=docker template://docker --vm-type=vz --tty=false --rosetta --network=vzNAT --mount-writable --mount-type=virtiofs
 {{ else if eq .chezmoi.os "linux" }}
-VM_TYPE="qemu"
+limactl create --name=docker template://docker --vm-type=qemu --tty=false --mount-writable --mount-type=9p
 {{ end -}}
 {{ if eq .chezmoi.os "darwin" "linux" -}}
-limactl create --name=docker template://docker --vm-type=$VM_TYPE --tty=false --mount-writable --mount-type=virtiofs
 limactl start-at-login docker
 limactl start docker
 {{ end -}}
