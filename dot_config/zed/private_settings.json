@@ -31,7 +31,7 @@
     "button": false
   },
   "chat_panel": {
-    "button": false
+    "button": "when_in_call"
   },
   "notification_panel": {
     "button": false
@@ -49,7 +49,8 @@
   "auto_install_extensions": {
     "catppuccin": true,
     "git-firefly": true,
-    "biome": true
+    "biome": true,
+    "golangci-lint": true
   },
   "theme": "Catppuccin Macchiato",
   "ui_font_size": 16,
@@ -89,10 +90,13 @@
       ]
     },
     "TypeScript": {
-      "language_servers": ["vtsls", "biome"],
+      "language_servers": ["vtsls"],
       "prettier": {
         "allowed": false
       }
+    },
+    "Go": {
+      "language_servers": ["gopls", "golangci-lint"]
     }
   },
   "lsp": {
@@ -107,6 +111,17 @@
           "parameterNames": true,
           "rangeVariableTypes": true
         }
+      }
+    },
+    "golangci-lint": {
+      "initialization_options": {
+        "command": [
+          "golangci-lint",
+          "run",
+          "--out-format",
+          "json",
+          "--issues-exit-code=1"
+        ]
       }
     },
     "vtsls": {

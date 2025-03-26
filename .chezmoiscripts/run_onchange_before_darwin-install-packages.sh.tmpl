@@ -5,7 +5,7 @@ set -ex
 echo ""
 echo "Resolving packages.yaml"
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.darwin.taps -}}
 tap {{ . | quote }}
 {{ end -}}
