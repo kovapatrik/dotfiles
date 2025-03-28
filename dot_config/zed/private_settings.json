@@ -42,6 +42,9 @@
   "tab_bar": {
     "show_nav_history_buttons": false
   },
+  "edit_predictions": {
+    "mode": "subtle"
+  },
   "toolbar": {
     "quick_actions": false,
     "breadcrumbs": false
