@@ -10,7 +10,6 @@ packages:
       - fzf
       - gh
       - git
-      - go
       - jq
       - lazygit
       - libpq
