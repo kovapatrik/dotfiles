@@ -18,7 +18,6 @@ packages:
       - yq
       - zoxide
     casks:
-      - arc
       - devtoys
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font

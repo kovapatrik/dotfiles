@@ -78,7 +78,6 @@ completions=(
     "docker docker completion zsh"
     "chezmoi chezmoi completion zsh"
     "mise mise completion zsh"
-    "pnpm pnpm completion zsh"
     "yq yq completion zsh"
 )
 completion-load $completions
