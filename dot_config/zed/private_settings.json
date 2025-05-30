@@ -12,17 +12,38 @@
       "version": "1"
     }
   },
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "anthropic",
       "model": "claude-3-7-sonnet-latest"
+    },
+    "profiles": {
+      "simple": {
+        "name": "Simple",
+        "tools": {
+          "read_file": true,
+          "now": true,
+          "diagnostics": true,
+          "contents": true,
+          "grep": true,
+          "list_directory": true,
+          "open": false
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "simple",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-thinking-latest"
     },
     "default_open_ai_model": "gpt-4o",
     "version": "2",
     "provider": null
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "supermaven"
   },
   "collaboration_panel": {
     "button": false
@@ -68,12 +89,7 @@
     "font_family": "MesloLGS Nerd Font",
     "button": false
   },
-  "language_servers": [
-    "!biome",
-    "!typescript-language-server",
-    "!eslint",
-    "..."
-  ],
+  "language_servers": ["!biome", "..."],
   "languages": {
     "Python": {
       "language_servers": ["pyright", "ruff"],
@@ -93,10 +109,20 @@
       ]
     },
     "TypeScript": {
-      "language_servers": ["vtsls"],
-      "prettier": {
-        "allowed": false
-      }
+      "language_servers": [
+        "!typescript-language-server",
+        "!eslint",
+        "biome",
+        "..."
+      ]
+    },
+    "JavaScript": {
+      "language_servers": [
+        "!typescript-language-server",
+        "!eslint",
+        "biome",
+        "..."
+      ]
     },
     "Go": {
       "language_servers": ["gopls", "golangci-lint"]
@@ -121,8 +147,9 @@
         "command": [
           "golangci-lint",
           "run",
-          "--out-format",
-          "json",
+          "--output.json.path",
+          "stdout",
+          "--show-stats=false",
           "--issues-exit-code=1"
         ]
       }
