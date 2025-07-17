@@ -7,15 +7,10 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "language_models": {
-    "openai": {
-      "version": "1"
-    }
-  },
   "agent": {
     "inline_assistant_model": {
-      "provider": "anthropic",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "openai",
+      "model": "gpt-4.1-mini"
     },
     "profiles": {
       "simple": {
@@ -35,11 +30,10 @@
     },
     "default_profile": "simple",
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-thinking-latest"
+      "provider": "openai",
+      "model": "gpt-4.1"
     },
     "default_open_ai_model": "gpt-4o",
-    "version": "2",
     "provider": null
   },
   "features": {
@@ -211,13 +205,6 @@
     "biome": {
       "settings": {
         "require_config_file": true
-      }
-    },
-    "yaml-language-server": {
-      "initialization_options": {
-        "schemaStore": {
-          "enable": true
-        }
       }
     },
     "ruff": {

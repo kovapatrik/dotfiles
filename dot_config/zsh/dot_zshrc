@@ -79,6 +79,7 @@ completions=(
     "chezmoi chezmoi completion zsh"
     "mise mise completion zsh"
     "yq yq completion zsh"
+    "kubectl kubectl completion zsh"
 )
 completion-load $completions
 
