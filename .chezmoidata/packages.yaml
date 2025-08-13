@@ -27,8 +27,8 @@ packages:
       - ghostty
       - languagetool
       - legcord
+      - logi-options+
       - lunar
-      - mos
       - telegram
       - raycast
       - slack
