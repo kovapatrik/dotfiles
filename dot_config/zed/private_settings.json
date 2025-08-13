@@ -7,10 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "icon_theme": "Catppuccin Macchiato",
   "agent": {
-    "inline_assistant_model": {
-      "provider": "openai",
-      "model": "gpt-4.1-mini"
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-latest"
     },
     "profiles": {
       "simple": {
@@ -28,16 +29,10 @@
         "context_servers": {}
       }
     },
-    "default_profile": "simple",
-    "default_model": {
-      "provider": "openai",
-      "model": "gpt-4.1"
-    },
-    "default_open_ai_model": "gpt-4o",
-    "provider": null
+    "default_profile": "simple"
   },
   "features": {
-    "edit_prediction_provider": "supermaven"
+    "edit_prediction_provider": "zed"
   },
   "collaboration_panel": {
     "button": false
