@@ -1,0 +1,4 @@
+{{ $brewUser := promptStringOnce . "brewUser" "If Homebrew is already installed for another user, please enter the username of the user who installed it. Otherwise, leave blank." }}
+
+[data]
+    brewUser = "{{ $brewUser }}"

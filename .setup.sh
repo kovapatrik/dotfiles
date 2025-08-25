@@ -7,8 +7,13 @@ set -ex
 # Install XCode Command Line Tools if necessary
 xcode-select --install || echo "XCode already installed"
 
-if which -s brew; then
-    echo 'Homebrew is already installed'
+if [[ -x /opt/homebrew/bin/brew ]]; then
+    if which -s brew; then
+        echo 'Homebrew is already installed'
+    else
+        echo 'Homebrew is already installed for another user. Please use an alias for brew.'
+        exit 1
+    fi
 else
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     (
