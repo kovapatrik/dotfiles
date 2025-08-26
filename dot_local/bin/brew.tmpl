@@ -1,0 +1,5 @@
+{{- if .brewUser }}
+sudo -Hu {{ .brewUser }} brew "$@"
+{{- else }}
+brew "$@"
+{{- end }}
