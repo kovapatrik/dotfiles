@@ -19,6 +19,7 @@ packages:
       - yq
       - zoxide
     casks:
+      - bitwarden
       - devtoys
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font
@@ -35,6 +36,3 @@ packages:
       - slack
       - zed
       - zen-browser
-    apps:
-      - name: Bitwarden
-        id: 1352778147
