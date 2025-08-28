@@ -29,6 +29,7 @@ packages:
       - legcord
       - logi-options+
       - lunar
+      - meetingbar
       - telegram
       - raycast
       - slack
