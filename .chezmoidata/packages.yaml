@@ -31,8 +31,9 @@ packages:
       - logi-options+
       - lunar
       - meetingbar
-      - telegram
       - raycast
       - slack
+      - telegram
+      - ungoogled-chromium
       - zed
       - zen-browser
