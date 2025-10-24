@@ -1,3 +1,4 @@
-theme = catppuccin-macchiato
+theme = catppuccin-macchiato.conf
 font-family = "MesloLGS Nerd Font Mono"
 font-size = 16
+shell-integration-features = ssh-terminfo
