@@ -28,10 +28,8 @@ function plugin-load {
 }
 
 function completion-load {
-    local completion name command completionfile
-    for completion in $@; do
-        name=${completion%% *}
-        command=${completion#* }
+    local name command completionfile
+    for name command in ${(kv)completions}; do
         completionfile=$COMPLETIONSDIR/_$name
         if [[ ! -f $completionfile ]]; then
             echo "Creating completion file for $name..."
@@ -73,15 +71,15 @@ COMPLETIONSDIR=$ZDOTDIR/completions
 [[ -d $COMPLETIONSDIR ]] || mkdir $COMPLETIONSDIR
 fpath=($COMPLETIONSDIR \\$fpath)
 
-# Format: "name command"
-completions=(
-    "docker docker completion zsh"
-    "chezmoi chezmoi completion zsh"
-    "mise mise completion zsh"
-    "yq yq completion zsh"
-    "kubectl kubectl completion zsh"
+# Associative array: [completion_file_name]="command to generate completion"
+typeset -A completions=(
+    [docker]="docker completion zsh"
+    [chezmoi]="chezmoi completion zsh"
+    [mise]="mise completion zsh"
+    [yq]="yq completion zsh"
+    [kubectl]="kubectl completion zsh"
 )
-completion-load $completions
+completion-load
 
 # Load completions
 # setopt interactive_comments # needed for zsh-autocomplete
