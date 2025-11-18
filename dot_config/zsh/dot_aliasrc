@@ -1,9 +1,0 @@
-# ls, cat
-alias ls="eza"
-alias ll="eza -lh"
-alias l="eza -lah"
-alias cat="bat"
-alias lg="lazygit"
-
-# kubectl
-alias k="kubectl"

@@ -1,0 +1,17 @@
+# ls, cat
+alias ls="eza"
+alias ll="eza -lh"
+alias l="eza -lah"
+alias cat="bat"
+alias lg="lazygit"
+
+# kubectl
+alias k="kubectl"
+
+{{ if eq .chezmoi.os "darwin" -}}
+ctc() { command cat "$1" | pbcopy; }
+pfc() { pbpaste; }
+{{ else if eq .chezmoi.os "linux" -}}
+ctc() { command cat "$1" | wl-copy; }
+pfc() { wl-paste; }
+{{ end -}}
