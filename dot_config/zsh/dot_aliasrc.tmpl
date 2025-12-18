@@ -9,9 +9,9 @@ alias lg="lazygit"
 alias k="kubectl"
 
 {{ if eq .chezmoi.os "darwin" -}}
-ctc() { command cat "$1" | pbcopy; }
+ctc() { if [ -t 0 ]; then command cat "$1" | pbcopy; else pbcopy; fi; }
 pfc() { pbpaste; }
 {{ else if eq .chezmoi.os "linux" -}}
-ctc() { command cat "$1" | wl-copy; }
+ctc() { if [ -t 0 ]; then command cat "$1" | wl-copy; else wl-copy; fi; }
 pfc() { wl-paste; }
 {{ end -}}
