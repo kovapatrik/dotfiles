@@ -24,6 +24,8 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
 # Disable recents from Dock
 defaults write com.apple.dock show-recents -bool false
+# Disable resizing the Dock
+defaults write com.apple.dock size-immutable -bool true;
 # Show hidden files in Finder
 defaults write com.apple.finder AppleShowAllFiles -bool true
 # Show path bar in Finder
