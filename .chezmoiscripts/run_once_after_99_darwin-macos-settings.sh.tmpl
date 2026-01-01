@@ -77,13 +77,13 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 ###############################################################################
 
 # Bind fill window to Control+Option+Enter
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Fill" "^~\\U21a9"
+#defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Fill" "^~\\U21a9"
 # Bind center window to Control+Option+c
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Center" "^~c"
+#defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Center" "^~c"
 # Bind arranging window left side to Control+Option+Left Arrow
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Left" "~^\\U2190"
+#defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Left" "~^\\U2190"
 # Bind arranging window right side to Control+Option+Right Arrow
-defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Right" "~^\\U2192"
+#defaults write NSGlobalDomain NSUserKeyEquivalents -dict-add "\033Window\033Move & Resize\033Right" "~^\\U2192"
 
 # Disable Spotlight shortcut (64 is Spotlight)
 /usr/libexec/PlistBuddy -c "Set AppleSymbolicHotKeys:64:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
