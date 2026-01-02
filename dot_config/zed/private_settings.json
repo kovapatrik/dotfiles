@@ -78,7 +78,6 @@
     "button": false
   },
   "language_servers": [
-    "!typescript-language-server",
     "!eslint",
     "!biome",
     "!angular",
