@@ -40,3 +40,5 @@ Temporary Items
 .zed
 
 mise.local.toml
+
+**/.claude/settings.local.json

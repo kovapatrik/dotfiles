@@ -13,7 +13,7 @@
     "use_modifier_to_send": true,
     "default_model": {
       "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest"
+      "model": "claude-sonnet-4-5-latest",
     },
     "profiles": {
       "simple": {
@@ -25,44 +25,44 @@
           "contents": true,
           "grep": true,
           "list_directory": true,
-          "open": false
+          "open": false,
         },
         "enable_all_context_servers": false,
-        "context_servers": {}
-      }
+        "context_servers": {},
+      },
     },
-    "default_profile": "simple"
+    "default_profile": "simple",
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "outline_panel": {
-    "button": false
+    "button": false,
   },
   "notification_panel": {
-    "button": false
+    "button": false,
   },
   "project_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "tab_bar": {
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
   },
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "toolbar": {
     "quick_actions": false,
-    "breadcrumbs": false
+    "breadcrumbs": false,
   },
   "auto_install_extensions": {
     "catppuccin": true,
     "git-firefly": true,
     "biome": true,
-    "golangci-lint": true
+    "golangci-lint": true,
   },
   "theme": "Catppuccin Macchiato",
   "ui_font_size": 16,
@@ -71,18 +71,12 @@
     "enabled": true,
     "show_type_hints": false,
     "show_parameter_hints": true,
-    "show_other_hints": true
+    "show_other_hints": true,
   },
   "terminal": {
     "font_family": "MesloLGS Nerd Font",
-    "button": false
+    "button": false,
   },
-  "language_servers": [
-    "!eslint",
-    "!biome",
-    "!angular",
-    "..."
-  ],
   "languages": {
     "Python": {
       "language_servers": ["pyright", "ruff"],
@@ -92,17 +86,24 @@
         { "code_action": "source.fixAll.ruff" },
         {
           "language_server": {
-            "name": "ruff"
-          }
-        }
-      ]
+            "name": "ruff",
+          },
+        },
+      ],
+    },
+    "JavaScript": {
+      "language_servers": ["vtsls"],
     },
     "TypeScript": {
-      "prettier": { "allowed": false }
+      "prettier": { "allowed": false },
+      "language_servers": ["vtsls"],
+    },
+    "TSX": {
+      "language_servers": ["vtsls"],
     },
     "Go": {
-      "language_servers": ["gopls", "golangci-lint"]
-    }
+      "language_servers": ["gopls", "golangci-lint"],
+    },
   },
   "lsp": {
     "gopls": {
@@ -114,9 +115,9 @@
           "constantValues": true,
           "functionTypeParameters": true,
           "parameterNames": true,
-          "rangeVariableTypes": true
-        }
-      }
+          "rangeVariableTypes": true,
+        },
+      },
     },
     "golangci-lint": {
       "initialization_options": {
@@ -126,9 +127,9 @@
           "--output.json.path",
           "stdout",
           "--show-stats=false",
-          "--output.text.path="
-        ]
-      }
+          "--output.text.path=",
+        ],
+      },
     },
     "vtsls": {
       "settings": {
@@ -137,57 +138,57 @@
           "inlayHints": {
             "parameterNames": {
               "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
+              "suppressWhenArgumentMatchesName": false,
             },
             "parameterTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "variableTypes": {
               "enabled": true,
-              "suppressWhenTypeMatchesName": true
+              "suppressWhenTypeMatchesName": true,
             },
             "propertyDeclarationTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "functionLikeReturnTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "enumMemberValues": {
-              "enabled": true
-            }
-          }
+              "enabled": true,
+            },
+          },
         },
         // For TypeScript:
         "typescript": {
           "inlayHints": {
             "parameterNames": {
               "enabled": "all",
-              "suppressWhenArgumentMatchesName": false
+              "suppressWhenArgumentMatchesName": false,
             },
             "parameterTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "variableTypes": {
               "enabled": true,
-              "suppressWhenTypeMatchesName": true
+              "suppressWhenTypeMatchesName": true,
             },
             "propertyDeclarationTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "functionLikeReturnTypes": {
-              "enabled": true
+              "enabled": true,
             },
             "enumMemberValues": {
-              "enabled": true
-            }
-          }
-        }
-      }
+              "enabled": true,
+            },
+          },
+        },
+      },
     },
     "biome": {
       "settings": {
-        "require_config_file": true
-      }
+        "require_config_file": true,
+      },
     },
     "ruff": {
       "initialization_options": {
@@ -195,26 +196,26 @@
           // Ruff server settings goes here
           "lineLength": 120,
           "lint": {
-            "extendSelect": ["I"]
-          }
-        }
-      }
+            "extendSelect": ["I"],
+          },
+        },
+      },
     },
     "rust-analyzer": {
       "initialization_options": {
         "inlayHints": {
           "maxLength": null,
           "lifetimeElisionHints": {
-            "enable": true
+            "enable": true,
           },
           "bindingModeHints": {
-            "enable": true
+            "enable": true,
           },
           "closureReturnTypeHints": {
-            "enable": true
-          }
-        }
-      }
-    }
-  }
+            "enable": true,
+          },
+        },
+      },
+    },
+  },
 }
