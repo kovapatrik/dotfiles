@@ -3,8 +3,8 @@
 # libpq
 export PATH="$PATH:$HOMEBREW_PREFIX/opt/libpq/bin"
 
-# lima - use container named docker
-export DOCKER_HOST=$(limactl list docker --format 'unix://{{.Dir}}/sock/docker.sock')
+# lima - use guest socket for rootless VMs
+export DOCKER_SOCK=/run/user/$(id -u)/docker.sock
 
 # dotnet
 export DOTNET_ROOT="$HOMEBREW_PREFIX/opt/dotnet/libexec"

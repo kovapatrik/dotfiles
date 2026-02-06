@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "show_edit_predictions": true,
   "colorize_brackets": true,
   "icon_theme": "Catppuccin Macchiato",
   "agent": {
@@ -33,9 +34,6 @@
     },
     "default_profile": "simple",
   },
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
   "collaboration_panel": {
     "button": false,
   },
@@ -52,6 +50,7 @@
     "show_nav_history_buttons": false,
   },
   "edit_predictions": {
+    "provider": "zed",
     "mode": "subtle",
   },
   "toolbar": {
@@ -206,13 +205,23 @@
         "inlayHints": {
           "maxLength": null,
           "lifetimeElisionHints": {
-            "enable": true,
+            "enable": "always",
           },
           "bindingModeHints": {
             "enable": true,
           },
           "closureReturnTypeHints": {
-            "enable": true,
+            "enable": "always",
+          },
+        },
+      },
+    },
+    "helm": {
+      "settings": {
+        "helm-ls": {
+          "logLevel": "info",
+          "yamlls": {
+            "enabled": true,
           },
         },
       },
