@@ -12,5 +12,7 @@ limactl create --name=docker template:docker --vm-type=qemu --tty=false --mount-
 {{ if eq .chezmoi.os "darwin" "linux" -}}
 limactl start-at-login docker
 limactl start docker
+docker context create lima-docker --docker $(limactl list docker --format 'host=unix://{{"{{ .Dir }}"}}/sock/docker.sock')
+docker context use lima-docker
 {{ end -}}
 echo "Done"
