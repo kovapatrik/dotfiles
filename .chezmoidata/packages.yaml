@@ -10,6 +10,7 @@ packages:
       - fzf
       - gh
       - git
+      - infat
       - jq
       - kubernetes-cli
       - lazygit
@@ -20,20 +21,22 @@ packages:
       - zoxide
     casks:
       - bitwarden
-      - devtoys
+      - claude-code
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font
-      - font-monaspace-nerd-font
-      - github
+      - font-monaspice-nerd-font
       - ghostty
-      - languagetool
+      - iina
+      - inkscape
       - legcord
+      - libreoffice
       - logi-options+
       - lunar
       - meetingbar
       - raycast
       - slack
+      - spotify
       - telegram
       - ungoogled-chromium
+      - whatsapp
       - zed
-      - zen-browser

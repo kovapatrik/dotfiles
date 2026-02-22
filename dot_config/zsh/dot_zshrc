@@ -107,6 +107,9 @@ zstyle ':completion:*' menu no # fail-safe
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --color=always $realpath'
 
+# Secrets
+[ -f $ZDOTDIR/.secretsrc ] && source $ZDOTDIR/.secretsrc
+
 # Aliases
 [ -f $ZDOTDIR/.aliasrc ] && source $ZDOTDIR/.aliasrc
 

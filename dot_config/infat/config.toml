@@ -1,0 +1,11 @@
+[extensions]
+md    = "Zed"
+pdf   = "Preview"
+
+[schemes]
+mailto = "Mail"
+web    = "Safari"
+
+[types]
+plain-text = "Zed"
+text = "Zed"
