@@ -56,10 +56,6 @@ plugins=(
     Freed-Wu/zsh-help
     reegnz/jq-zsh-plugin
 
-    # Completions
-    eastokes/aws-plugin-zsh
-    MenkeTechnologies/zsh-cargo-completion
-
     # Must be after everything else
     zdharma-continuum/fast-syntax-highlighting
     zsh-users/zsh-history-substring-search
@@ -69,7 +65,7 @@ plugin-load $plugins
 # Setup extra completions
 COMPLETIONSDIR=$ZDOTDIR/completions
 [[ -d $COMPLETIONSDIR ]] || mkdir $COMPLETIONSDIR
-fpath=($COMPLETIONSDIR \\$fpath)
+fpath=($COMPLETIONSDIR $fpath)
 
 # Associative array: [completion_file_name]="command to generate completion"
 typeset -A completions=(
@@ -78,6 +74,7 @@ typeset -A completions=(
     [mise]="mise completion zsh"
     [yq]="yq completion zsh"
     [kubectl]="kubectl completion zsh"
+    [rustup]="rustup completions zsh cargo"
 )
 completion-load
 
