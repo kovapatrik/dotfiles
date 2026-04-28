@@ -9,3 +9,9 @@ export DOCKER_SOCK=/run/user/$(id -u)/docker.sock
 # dotnet
 export DOTNET_ROOT="$HOMEBREW_PREFIX/opt/dotnet/libexec"
 export PATH="$PATH:/Users/kovapatrik/.dotnet/tools"
+
+# GNU tools
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"

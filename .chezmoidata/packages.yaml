@@ -3,13 +3,17 @@ packages:
     taps:
     brews:
       - bat
+      - coreutils
       - docker
       - docker-buildx
       - docker-compose
       - eza
+      - findutils
       - fzf
+      - gawk
       - gh
       - git
+      - gnu-sed
       - infat
       - jq
       - kubernetes-cli
@@ -30,7 +34,7 @@ packages:
       - inkscape
       - legcord
       - libreoffice
-      - logi-options+
+      - linearmouse
       - lunar
       - meetingbar
       - raycast

@@ -74,7 +74,7 @@ typeset -A completions=(
     [mise]="mise completion zsh"
     [yq]="yq completion zsh"
     [kubectl]="kubectl completion zsh"
-    [rustup]="rustup completions zsh cargo"
+    [cargo]="rustup completions zsh cargo"
 )
 completion-load
 
