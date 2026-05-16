@@ -47,14 +47,14 @@
     "dock": "left",
     "button": false,
   },
-  "notification_panel": {
-    "button": false,
-  },
   "project_panel": {
     "dock": "left",
   },
   "tab_bar": {
     "show_nav_history_buttons": false,
+  },
+  "title_bar": {
+    "show_sign_in": false,
   },
   "edit_predictions": {
     "provider": "zed",
