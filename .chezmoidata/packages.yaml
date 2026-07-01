@@ -24,7 +24,6 @@ packages:
       - yq
       - zoxide
     casks:
-      - bitwarden
       - claude-code
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font
@@ -46,3 +45,6 @@ packages:
       - ungoogled-chromium
       - whatsapp
       - zed
+    apps:
+      - name: Bitwarden
+        id: 1352778147

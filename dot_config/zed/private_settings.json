@@ -9,7 +9,7 @@
 {
   "cli_default_open_behavior": "new_window",
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "show_edit_predictions": true,
   "colorize_brackets": true,
@@ -82,7 +82,9 @@
   "terminal": {
     "font_family": "MesloLGS Nerd Font",
     "button": false,
+    "detect_venv": "off",
   },
+  "language_servers": ["!biome", "..."],
   "languages": {
     "Python": {
       "language_servers": ["pyright", "ruff"],
@@ -139,7 +141,6 @@
     },
     "vtsls": {
       "settings": {
-        // For JavaScript:
         "javascript": {
           "inlayHints": {
             "parameterNames": {
@@ -164,7 +165,6 @@
             },
           },
         },
-        // For TypeScript:
         "typescript": {
           "inlayHints": {
             "parameterNames": {
@@ -199,7 +199,6 @@
     "ruff": {
       "initialization_options": {
         "settings": {
-          // Ruff server settings goes here
           "lineLength": 120,
           "lint": {
             "extendSelect": ["I"],
