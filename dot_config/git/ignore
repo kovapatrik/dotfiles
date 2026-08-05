@@ -40,5 +40,6 @@ Temporary Items
 .zed
 
 mise.local.toml
+tombi.toml
 
 **/.claude/settings.local.json
