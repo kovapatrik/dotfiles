@@ -8,3 +8,8 @@
 	required = true
 [pull]
     rebase = true
+[init]
+    defaultBranch = main
+[rerere]
+    enabled = true
+    autoUpdate = true
