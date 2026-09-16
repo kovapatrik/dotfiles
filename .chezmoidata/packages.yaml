@@ -36,12 +36,12 @@ packages:
       - linearmouse
       - lunar
       - meetingbar
-      - raycast
       - slack
       - spotify
       - tablepro
       - tailscale-app
       - telegram
+      - tinycast
       - ungoogled-chromium
       - whatsapp
       - zed
