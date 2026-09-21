@@ -1,10 +1,11 @@
+# Bootstrap only. ZDOTDIR has to be set before zsh goes looking for the rest of
+# its config, so this file stays minimal: nested zsh shells inherit ZDOTDIR and
+# therefore read $ZDOTDIR/.zshenv directly, never this file. Anything that needs
+# to apply to every shell belongs in $ZDOTDIR/.zshenv instead.
 if [[ -z "$XDG_CONFIG_HOME" ]]; then
   export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-export PATH="$PATH:$HOME/.local/bin"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export EDITOR="zed --wait"
 
-# Cargo
-source "$HOME/.cargo/env"
+[[ -f "$ZDOTDIR/.zshenv" ]] && source "$ZDOTDIR/.zshenv"

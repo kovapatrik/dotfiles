@@ -1,0 +1,15 @@
+# Keeps PATH from growing when this runs again in a nested shell.
+typeset -U path PATH
+
+export PATH="$PATH:$HOME/.local/bin"
+export EDITOR="zed --wait"
+
+# Cargo
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+
+# Nix
+if [[ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+  source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+elif [[ -e /nix/var/nix/profiles/default/etc/profile.d/nix.sh ]]; then
+  source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+fi
