@@ -35,6 +35,7 @@ packages:
       - libreoffice
       - linearmouse
       - lunar
+      - macpacker
       - meetingbar
       - slack
       - spotify
