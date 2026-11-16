@@ -24,14 +24,13 @@ packages:
       - yq
       - zoxide
     casks:
-      - claude-code
+      - claude-code@latest
       - font-geist-mono-nerd-font
       - font-meslo-lg-nerd-font
       - font-monaspice-nerd-font
       - ghostty
       - iina
       - inkscape
-      - legcord
       - libreoffice
       - linearmouse
       - lunar
@@ -39,6 +38,7 @@ packages:
       - meetingbar
       - slack
       - spotify
+      - swiftcord
       - tablepro
       - tailscale-app
       - telegram

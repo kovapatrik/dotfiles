@@ -39,7 +39,10 @@ Temporary Items
 .vscode
 .zed
 
+.mise
 mise.local.toml
+mise.local.lock
+
 tombi.toml
 
 **/.claude/settings.local.json
