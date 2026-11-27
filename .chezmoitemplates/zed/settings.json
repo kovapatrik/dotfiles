@@ -14,31 +14,6 @@
   "show_edit_predictions": true,
   "colorize_brackets": true,
   "icon_theme": "Catppuccin Macchiato",
-  "agent": {
-    "dock": "right",
-    "use_modifier_to_send": true,
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest",
-    },
-    "profiles": {
-      "simple": {
-        "name": "Simple",
-        "tools": {
-          "read_file": true,
-          "now": true,
-          "diagnostics": true,
-          "contents": true,
-          "grep": true,
-          "list_directory": true,
-          "open": false,
-        },
-        "enable_all_context_servers": false,
-        "context_servers": {},
-      },
-    },
-    "default_profile": "simple",
-  },
   "collaboration_panel": {
     "dock": "left",
     "button": false,
@@ -69,6 +44,7 @@
     "git-firefly": true,
     "biome": true,
     "golangci-lint": true,
+    "gotmpl": true,
   },
   "theme": "Catppuccin Macchiato",
   "ui_font_size": 16,

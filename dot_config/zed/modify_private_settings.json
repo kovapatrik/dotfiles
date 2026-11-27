@@ -1,0 +1,13 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /*
+  Renders .chezmoitemplates/zed/settings.json and keeps ssh_connections from
+  the live file, so remote hosts and projects never reach git.
+*/ -}}
+{{- $out := includeTemplate "zed/settings.json" . | fromJsonc -}}
+{{- if .chezmoi.stdin | trim -}}
+{{-   $live := fromJsonc .chezmoi.stdin -}}
+{{-   with get $live "ssh_connections" -}}
+{{-     $_ := set $out "ssh_connections" . -}}
+{{-   end -}}
+{{- end -}}
+{{ toPrettyJson "  " $out }}
