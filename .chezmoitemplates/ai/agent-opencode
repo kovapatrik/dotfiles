@@ -1,0 +1,11 @@
+{{- $a := index .root.ai.agents .name -}}
+---
+description: {{ $a.description | toJson }}
+mode: {{ get $a.opencode "mode" | default "subagent" }}
+model: {{ $a.opencode.model | toJson }}
+{{- with get $a.opencode "permissions" }}
+permissions:
+{{ toYaml . | trimSuffix "\n" | indent 2 }}
+{{- end }}
+---
+{{ includeTemplate (printf "ai/agents/%s.md" .name) (dict "tool" "opencode") }}

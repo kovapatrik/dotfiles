@@ -1,0 +1,7 @@
+---
+type: llm
+focus: trace
+weight: 1
+---
+
+The result matches this description: The component gets an on_obstacle trigger following ESPHome automation conventions (a callback registration method on the motor and either build_callback_automation or a final Trigger subclass with build_automation), fired once when the status changes to 0x70, with the address passed as a uint32_t argument; the schema uses automation.validate_automation; example.yaml shows the trigger; the code uses this->, no blocking, no extra state logging.

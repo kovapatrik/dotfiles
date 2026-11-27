@@ -1,0 +1,23 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /*
+  Merges the committed settings (.chezmoitemplates/ai/claude-settings.json) into
+  the live ~/.claude/settings.json. Committed keys win; for object values the
+  merge goes one level deep, so local-only keys (autoMode, extra hooks or
+  plugins) survive and never reach git.
+*/ -}}
+{{- $live := dict -}}
+{{- if .chezmoi.stdin | trim -}}
+{{-   $live = fromJson .chezmoi.stdin -}}
+{{- end -}}
+{{- $managed := includeTemplate "ai/claude-settings.json" . | fromJson -}}
+{{- range $k, $v := $managed -}}
+{{-   $cur := get $live $k -}}
+{{-   if and (kindIs "map" $v) (kindIs "map" $cur) -}}
+{{-     range $ik, $iv := $v -}}
+{{-       $_ := set $cur $ik $iv -}}
+{{-     end -}}
+{{-   else -}}
+{{-     $_ := set $live $k $v -}}
+{{-   end -}}
+{{- end -}}
+{{ toPrettyJson "  " $live }}

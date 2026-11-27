@@ -1,0 +1,46 @@
+# Shared AI agent definitions. Prompts live in .chezmoitemplates/ai/agents/<name>.md;
+# each tool gets its own frontmatter from here. Omit a tool's block to skip it.
+
+ai:
+  readonly_git: &readonly_git
+    - { action: edit, resource: "*", effect: deny }
+    - { action: shell, resource: "*", effect: ask }
+    - { action: shell, resource: "git diff *", effect: allow }
+    - { action: shell, resource: "git status *", effect: allow }
+    - { action: shell, resource: "git log *", effect: allow }
+    - { action: shell, resource: "git show *", effect: allow }
+    - { action: shell, resource: "git blame *", effect: allow }
+    - { action: shell, resource: "git merge-base *", effect: allow }
+
+  agents:
+    code-reviewer:
+      description: "Code reviewer that evaluates changes across five dimensions: correctness, readability, architecture, security, and performance. Use for thorough code review before merge."
+      claude: { model: opus, effort: low, tools: "Read, Grep, Glob, Bash" }
+      opencode: { model: "opencode-go/glm-5.3#high", permissions: *readonly_git }
+
+    comment-auditor:
+      description: Comment auditor that hunts narration, commented-out code, workaround justifications, and lint suppressions in a diff, and flags the refactor that makes each one unnecessary. Use to enforce comment hygiene before merge.
+      claude: { model: sonnet, effort: high, tools: "Read, Grep, Glob, Bash" }
+      opencode: { model: "opencode-go/deepseek-v4.1-flash#high", permissions: *readonly_git }
+
+    edge-case-hunter:
+      description: Edge case hunter that walks every branch and boundary reachable from a diff and reports the ones with no guard, plus the behavior that removed code used to carry. Use to find unhandled inputs, states, and failure paths before merge.
+      claude: { model: opus, effort: medium, tools: "Read, Grep, Glob, Bash" }
+      opencode: { model: "opencode-go/glm-5.3#high", permissions: *readonly_git }
+
+    merge-risk:
+      description: Merge risk assessor that rates a change on alignment, impact, verification, rollback cost, and error detection, then gates the verdict on alignment, verification, and error detection. Use to judge whether a change is safe to merge.
+      claude: { model: opus, effort: low, tools: "Read, Grep, Glob, Bash" }
+      opencode: { model: "opencode-go/glm-5.3#high", permissions: *readonly_git }
+
+    test-engineer:
+      description: Test engineer that reviews test quality across coverage, correctness, design, reliability, and maintainability. Runs the suite plus manual end-to-end smoke tests to confirm real behavior. Use to assess testing before merge.
+      claude: { model: opus, effort: low, tools: "Read, Grep, Glob, Bash" }
+      opencode:
+        model: "opencode-go/glm-5.3#high"
+        permissions:
+          - { action: edit, resource: "*", effect: deny }
+
+    spec-writer:
+      description: Drafts a pre-plan ticket from a raw prompt - verbatim prompt, restatement, assumptions, and a dependency-ordered list of open decisions. Use via /spec.
+      claude: { model: opus, effort: low, tools: "Read, Grep, Glob, Write" }

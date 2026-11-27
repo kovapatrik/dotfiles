@@ -1,0 +1,7 @@
+---
+type: llm
+focus: trace
+weight: 1
+---
+
+The result matches this description: A complete external component in components/sht40x (__init__.py or sensor.py with sensor_schema-based optional temperature/humidity entries, i2c.new_i2c_component, polling schema, enum precision option) plus C++ that uses PollingComponent + i2c::I2CDevice, waits for the measurement with set_timeout instead of delay, implements dump_config with LOG_SENSOR, follows ESPHome naming/this-> conventions, and an example.yaml that loads it via external_components.

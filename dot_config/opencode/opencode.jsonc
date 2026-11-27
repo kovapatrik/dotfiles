@@ -1,0 +1,14 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "model": "opencode-go/deepseek-v4.1-flash",
+    "update": "auto",
+    "plugins": [
+        "opencode-mem@latest",
+        "@tarquinen/opencode-dcp@latest"
+    ],
+    "agents": {
+        "title": {
+            "model": "opencode-go/space-bunny-free",
+        },
+    },
+}

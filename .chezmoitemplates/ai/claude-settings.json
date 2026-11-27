@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "TaskList",
+      "TaskGet",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(pwd)",
+      "Bash(echo *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(git status *)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(grep *)",
+      "Bash(which *)",
+      "Bash(whereis *)",
+      "Bash(file *)",
+      "Bash(stat *)",
+      "Bash(wc *)",
+      "Bash(tree *)"
+    ],
+    "deny": [
+      "Bash(rm *)"
+    ],
+    "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "codebase-discovery@company-skills": true,
+    "skill-authoring@company-skills": true,
+    "research@company-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "company-skills": {
+      "source": {
+        "source": "github",
+        "repo": "adroit-group/claude-tools"
+      }
+    }
+  },
+  "outputStyle": "Concise",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "high"
+    }
+  },
+  "promptSuggestionEnabled": false,
+  "tui": "fullscreen",
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark",
+  "editorMode": "normal",
+  "preferredNotifChannel": "ghostty",
+  "switchModelsOnFlag": false,
+  "inputNeededNotifEnabled": true,
+  "skipAutoPermissionPrompt": true
+}

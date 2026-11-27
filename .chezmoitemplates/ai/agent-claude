@@ -1,0 +1,13 @@
+{{- $a := index .root.ai.agents .name -}}
+---
+name: {{ .name }}
+description: {{ $a.description | toJson }}
+{{- with get $a.claude "tools" }}
+tools: {{ . }}
+{{- end }}
+model: {{ $a.claude.model }}
+{{- with get $a.claude "effort" }}
+effort: {{ . }}
+{{- end }}
+---
+{{ includeTemplate (printf "ai/agents/%s.md" .name) (dict "tool" "claude") }}
