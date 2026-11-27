@@ -42,7 +42,13 @@ else
     CONTEXT_COLOR="$WHITE"
 fi
 
+# Profile label for extra accounts (CLAUDE_CONFIG_DIR=~/.claude-<name>)
+PROFILE_DISPLAY=""
+case "${CLAUDE_CONFIG_DIR:-}" in
+    */.claude-*) PROFILE_DISPLAY="\033[38;5;208m● ${CLAUDE_CONFIG_DIR##*/.claude-}${RESET} " ;;
+esac
+
 # Format output
-OUTPUT="${BRANCH_DISPLAY} ${CYAN}[${MODEL}]${RESET} ${GREEN}+${LINES_ADDED}${RESET}${RED}/-${LINES_REMOVED}${RESET} | Context: ${CONTEXT_COLOR}${CONTEXT_PCT}%${RESET}"
+OUTPUT="${PROFILE_DISPLAY}${BRANCH_DISPLAY} ${CYAN}[${MODEL}]${RESET} ${GREEN}+${LINES_ADDED}${RESET}${RED}/-${LINES_REMOVED}${RESET} | Context: ${CONTEXT_COLOR}${CONTEXT_PCT}%${RESET}"
 
 echo -e "$OUTPUT"
